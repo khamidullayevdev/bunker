@@ -1,18 +1,9 @@
-"use client";
+import HomeScreen from "@/components/screens/HomeScreen";
 
-import { SignInButton, UserButton } from "@clerk/nextjs";
-import { Authenticated, Unauthenticated } from "convex/react";
+// This screen renders only in the browser, after the sign-in check, so there is
+// nothing for instant-navigation validation to look at on the server.
+export const instant = false;
 
-export default function Home() {
-  return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-6 p-8">
-      <h1 className="text-3xl font-semibold tracking-tight">ZicDeck</h1>
-      <Unauthenticated>
-        <SignInButton />
-      </Unauthenticated>
-      <Authenticated>
-        <UserButton />
-      </Authenticated>
-    </main>
-  );
+export default function Page() {
+  return <HomeScreen />;
 }
